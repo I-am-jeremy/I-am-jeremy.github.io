@@ -55,7 +55,42 @@ body, html {
 
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'About')">About</button>
+  <button class="tablinks" onclick="openCity(event, 'Research')">Research</button>
+  <button class="tablinks" onclick="openCity(event, 'Art')">Art</button>
+</div>
 
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Herer I say stuff about myself.</p>
+</div>
+
+<div id="Research" class="tabcontent">
+  <h3>Research</h3>
+  <p>Talk about research</p> 
+</div>
+
+<div id="Art" class="tabcontent">
+  <h3>Art</h3>
+  <p>Pictures and stuff</p>
+</div>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 <!-- About Container -->
 <div class="w3-container" id="about">
   <div class="w3-content" style="max-width:700px">
